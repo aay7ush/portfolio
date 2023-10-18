@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets"
+import MainContent from "./MainContent.astro"
+import Wrapper from "./Wrapper.astro"
+
+interface Project {
+  title: string
+  image: string
+  description: string
+  techStack: string[]
+  github: string
+  liveDemo: string
+}
+
+const projects: Project[] = [
+  {
+    title: "Car Hub",
+    image: "/car-hub.png",
+    description: "Discover Your Dream Car - quickly and easily!",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Headless UI"],
+    github: "https://github.com/aay7ush/car-hub",
+    liveDemo: "https://c4r-hub.vercel.app/",
+  },
+  {
+    title: "The News Wire",
+    image: "/news-wire.png",
+    description: "Explore Trending News Articles all around the World.!",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "GraphQL", "StepZen"],
+    github: "https://github.com/aay7ush/news-app",
+    liveDemo: "https://n3ws-app.vercel.app/",
+  },
+  {
+    title: "Fitness Club",
+    image: "/fitness-club.png",
+    description: "Check out the most effective exercises personalized!",
+    techStack: ["React", "React Router", "Material UI"],
+    github: "https://github.com/aay7ush/fitness-app",
+    liveDemo: "https://f1tness-app.netlify.app/",
+  },
+]
+---
+
+<Wrapper classes="py-20" maxWidth="max-w-5xl" id="portfolio">
+  <MainContent
+    classes="md:text-center"
+    title="Latest Work"
+    subtitle="Portfolio"
+    paragraph="Dive into my project showcase – where ideas come to life through code. Explore a curated selection of my recent web development creations below."
+  />
+
+  <section class="mt-10 text-base">
+    <div
+      class="flex flex-wrap justify-center gap-16 text-white justify-items-center"
+    >
+      {
+        projects.map((project: Project) => (
+          <div class="relative max-w-md overflow-hidden cursor-pointer group rounded-xl">
+            <Image
+              width={1894}
+              height={1207}
+              src={project.image}
+              alt=""
+              class="w-full h-full group-hover:opacity-40"
+            />
+            <div class="absolute space-y-1 transition-all duration-300 ease-linear opacity-0 group-hover:opacity-100 bottom-3 left-3">
+              <h4 class="text-2xl font-extrabold">{project.title}</h4>
+              <p>{project.description}</p>
+              <div class="flex gap-1">
+                {project.techStack.map((tech: string) => (
+                  <p class="bg-white text-clr-primary py-1.5 px-3 rounded-full text-sm">
+                    {tech}
+                  </p>
+                ))}
+              </div>
+              <div class="flex gap-3 pt-2 font-semibold">
+                <a
+                  href={project.liveDemo}
+                  class="px-3 py-1.5 rounded-md bg-clr-accent flex gap-3 items-center"
+                >
+                  <span>Live Demo</span>
+                  <i class="fa-solid fa-paper-plane fa-beat" />
+                </a>
+                <a
+                  href={project.github}
+                  class="grid w-10 h-10 text-2xl rounded-full place-content-center bg-clr-accent"
+                >
+                  <i class="fa-brands fa-github" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Wrapper>

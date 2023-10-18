@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets"
+import Wrapper from "./Wrapper.astro"
+---
+
+<header class="sticky top-0 z-50 bg-clr-dark">
+  <Wrapper classes="flex justify-between items-center h-20">
+    <Image src="/logo.png" alt="logo" width={170} height={48} />
+
+    <button id="menu-btn" class="border mobile-btn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <button id="close-btn" class="z-10 hidden border-2 mobile-btn">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <nav
+      id="navbar"
+      class="fixed top-0 right-0 hidden w-1/2 h-full tracking-widest text-white uppercase md:w-auto bg-clr-accent md:static md:block md:normal-case md:bg-transparent"
+    >
+      <ul
+        class="flex flex-col items-center justify-center h-full gap-16 md:flex-row"
+      >
+        <li class="nav__link">
+          <a href="#">Home</a>
+        </li>
+        <li class="nav__link">
+          <a href="#about">About</a>
+        </li>
+        <li class="nav__link">
+          <a href="#portfolio">Portfolio</a>
+        </li>
+        <li
+          class="px-5 pt-3 pb-2 font-bold border-2 border-gray-300 rounded-md nav__link md:border md:uppercase md:hover:border-clr-accent"
+        >
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </Wrapper>
+</header>
+
+<style>
+  .mobile-btn {
+    @apply px-3 py-2 pb-1 text-2xl border-gray-300 rounded-md md:hidden;
+  }
+  .nav__link {
+    @apply md:hover:text-clr-accent transition-all duration-200 ease-in;
+  }
+</style>
+
+<script>
+  const menuButton = document.getElementById("menu-btn") as HTMLButtonElement
+  const closeButton = document.getElementById("close-btn") as HTMLButtonElement
+  const navbar = document.getElementById("navbar") as HTMLElement
+  const navLinks = document.querySelectorAll(".nav__link")
+
+  const handleClick = () => {
+    navbar.classList.toggle("hidden")
+    menuButton.classList.toggle("hidden")
+    closeButton.classList.toggle("hidden")
+  }
+
+  menuButton.addEventListener("click", handleClick)
+  closeButton.addEventListener("click", handleClick)
+  navLinks.forEach((navLink) => navLink.addEventListener("click", handleClick))
+</script>

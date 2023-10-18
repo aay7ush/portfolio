@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets"
+import MainContent from "./MainContent.astro"
+import Wrapper from "./Wrapper.astro"
+---
+
+<Wrapper
+  classes="grid gap-7 md:grid-cols-2 min-h-[calc(100vh-5rem)] items-center mb-20"
+>
+  <Image
+    class="md:order-2"
+    width={570}
+    height={555}
+    src="/hero.png"
+    alt="hero image"
+    loading="lazy"
+  />
+
+  <div class="lg:flex lg:items-center lg:gap-10">
+    <div class="flex-col hidden gap-5 text-3xl text-white lg:flex">
+      <a href="https://twitter.com/aay7ush" target="_blank" class="social">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://github.com/aay7ush" target="_blank" class="social">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/aay7ush/"
+        target="_blank"
+        class="social"
+      >
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <button class="mt-4"
+        ><i class="fa-solid fa-angles-down fa-bounce"></i></button
+      >
+    </div>
+
+    <MainContent
+      title="Hey, I'm Aayush Jaiswal"
+      subtitle="Front-End Developer"
+      paragraph="Passionate front-end developer from India, crafting captivating digital experiences one line of code at a time."
+      button="Hire Me"
+    />
+  </div>
+</Wrapper>
+
+<style>
+  .social {
+    @apply hover:text-clr-accent transition-all duration-200 ease-in;
+  }
+</style>

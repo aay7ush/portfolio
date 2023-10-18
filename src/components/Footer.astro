@@ -1,0 +1,47 @@
+---
+import Wrapper from "./Wrapper.astro"
+---
+
+<footer class="relative">
+  <Wrapper classes="space-y-7 my-7">
+    <hr class="border-2 border-[#3A3C56]" />
+    <div class="flex items-center justify-between">
+      <p>&copy; Copyright {new Date().getFullYear()}. All Rights Reserved.</p>
+      <div class="flex gap-5 text-xl text-white">
+        <a href="https://twitter.com/aay7ush" target="_blank" class="social"
+          ><i class="fa-brands fa-x-twitter"></i></a
+        >
+        <a href="https://github.com/aay7ush" target="_blank" class="social"
+          ><i class="fa-brands fa-github"></i></a
+        >
+
+        <a
+          href="https://www.linkedin.com/in/aay7ush/"
+          target="_blank"
+          class="social"><i class="fa-brands fa-linkedin-in"></i></a
+        >
+      </div>
+    </div>
+    <button
+      id="scrollToTop"
+      class="hidden lg:block absolute right-20 -top-24 bg-clr-accent pt-3.5 text-2xl px-4 pb-2 rounded-md"
+      ><i class="fa-solid fa-chevron-up fa-bounce"></i></button
+    >
+  </Wrapper>
+</footer>
+
+<style>
+  .social {
+    @apply w-10 h-10 grid place-content-center rounded-full bg-clr-accent;
+  }
+</style>
+
+<script>
+  const scrollToTopBtn = document.getElementById(
+    "scrollToTop"
+  ) as HTMLButtonElement
+
+  scrollToTopBtn.addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  )
+</script>

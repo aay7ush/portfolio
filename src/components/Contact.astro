@@ -1,0 +1,100 @@
+---
+import MainContent from "./MainContent.astro"
+import Wrapper from "./Wrapper.astro"
+---
+
+<Wrapper classes="pb-20 pt-10" id="contact" maxWidth="max-w-5xl">
+  <MainContent
+    classes="md:text-center"
+    title="Contact Me"
+    subtitle="Contact"
+    paragraph="Ready to collaborate or have a question? Don't hesitate to reach out. Feel free to drop me a message and I'll get back to you as soon as possible. Let's connect and bring your web project to life!"
+  />
+
+  <form
+    action="#"
+    class="grid max-w-2xl gap-4 py-12 mx-auto bg-gray-100 rounded-md px-7 mt-7 text-clr-primary"
+  >
+    <h4 class="mb-4 text-3xl font-bold">Get In Touch</h4>
+    <input type="text" name="name" placeholder="Name" required class="input" />
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+      class="input"
+    />
+    <textarea
+      name="message"
+      rows="7"
+      placeholder="Message"
+      required
+      class="resize-none input"></textarea>
+    <button
+      type="submit"
+      class="flex items-center gap-2 px-5 pt-3 pb-2 mt-4 ml-auto font-bold text-white uppercase transition-all duration-200 ease-in-out rounded-md bg-clr-accent hover:bg-clr-accent/80"
+      ><span>Send</span><i class="pb-1 fa-solid fa-paper-plane fa-beat"
+      ></i></button
+    >
+  </form>
+</Wrapper>
+
+<style>
+  .input {
+    @apply border-2 border-clr-accent/20 p-2 indent-1 rounded-md placeholder-clr-primary/40;
+  }
+</style>
+
+<script>
+  import emailjs from "@emailjs/browser"
+
+  const form = document.querySelector("form") as HTMLFormElement
+
+  const PUBLIC_KEY = "AaQCMS46XSD4L7oOR"
+  const SERVICE_ID = "service_npr1ocv"
+  const TEMPLATE_ID = "template_t9v3xhp"
+
+  const handleSubmit = (e: Event) => {
+    e.preventDefault()
+
+    const name = document.querySelector(
+      "input[name='name']"
+    ) as HTMLInputElement
+    const email = document.querySelector(
+      "input[name='email']"
+    ) as HTMLInputElement
+    const message = document.querySelector(
+      "textarea[name='message']"
+    ) as HTMLTextAreaElement
+
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: name.value,
+          to_name: "Aayush",
+          from_email: email.value,
+          to_email: "workwithaay7ush@gmail.com",
+          message: message.value,
+        },
+        PUBLIC_KEY
+      )
+      .then(
+        () => {
+          alert("Thank You! I'll get back to you as soon as possible.")
+
+          name.value = ""
+          email.value = ""
+          message.value = ""
+        },
+        (error) => {
+          console.log(error)
+
+          alert("Something went wrong.")
+        }
+      )
+  }
+
+  form.addEventListener("submit", (e) => handleSubmit(e))
+</script>

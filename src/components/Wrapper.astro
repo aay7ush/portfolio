@@ -1,0 +1,13 @@
+---
+interface Props {
+  classes?: string
+  id?: string
+  maxWidth?: string
+}
+
+const { classes, id, maxWidth = "max-w-6xl" } = Astro.props
+---
+
+<article class={`mx-auto ${maxWidth} px-5 ${classes}`} id={id}>
+  <slot />
+</article>

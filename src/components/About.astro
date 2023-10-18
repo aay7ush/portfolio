@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets"
+import MainContent from "./MainContent.astro"
+import Wrapper from "./Wrapper.astro"
+---
+
+<div class="pt-10 bg-clr-light text-clr-primary pb-28">
+  <Wrapper id="about">
+    <section class="grid items-center gap-7 md:grid-cols-2 lg:gap-16">
+      <Image
+        src="/about.png"
+        alt="about image"
+        width={580}
+        height={570}
+        loading="lazy"
+        class="py-12"
+      />
+      <MainContent
+        title="Front-End Developer"
+        subtitle="Aayush Jaiswal"
+        paragraph="Young and ambitious self-taught Developer hailing from India, crafting seamless web experiences with Next.js, TypeScript, and Tailwind CSS. Transforming visions into pixel-perfect realities. Explore my digital journey here!"
+        button="Resume"
+      />
+    </section>
+    <section
+      class="flex flex-col gap-10 mx-auto border rounded-md mt-28 border-clr-accent/25 md:flex-row lg:gap-20 w-fit"
+    >
+      <div class="flex items-center gap-5 px-10 pt-10 md:py-0 lg:pl-20">
+        <div class="icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <div>
+          <h4 class="text-5xl font-extrabold">1.5+</h4>
+          <p>Years of Experience</p>
+        </div>
+      </div>
+
+      <hr class="border-clr-accent/25 md:hidden" />
+      <div class="hidden md:block bg-clr-accent/25 w-[1px] h-40"></div>
+
+      <div class="flex items-center gap-5 px-10 pb-10 md:py-0 lg:pr-20">
+        <div class="icon">
+          <i class="fa-regular fa-folder-open"></i>
+        </div>
+        <div>
+          <h4 class="text-5xl font-extrabold">50+</h4>
+          <p>Projects Done</p>
+        </div>
+      </div>
+    </section>
+  </Wrapper>
+</div>
+
+<style>
+  .icon {
+    @apply grid w-24 h-24 text-5xl text-white rounded-full bg-clr-accent place-content-center;
+  }
+</style>
