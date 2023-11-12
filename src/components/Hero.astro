@@ -5,18 +5,13 @@ import Wrapper from "./Wrapper.astro"
 ---
 
 <Wrapper
-  classes="grid gap-7 md:grid-cols-2 min-h-[calc(100vh-5rem)] items-center mb-20"
+  classes="grid gap-7 md:grid-cols-2 min-h-[calc(100vh-5rem)] items-center mb-20 overflow-x-hidden"
 >
-  <Image
-    class="md:order-2"
-    width={570}
-    height={555}
-    src="/hero.png"
-    alt="hero image"
-    loading="lazy"
-  />
+  <div data-aos="fade-left" class="md:order-2">
+    <Image width={570} height={555} src="/hero.png" alt="hero image" />
+  </div>
 
-  <div class="lg:flex lg:items-center lg:gap-10">
+  <div data-aos="fade-right" class="lg:flex lg:items-center lg:gap-10">
     <div class="flex-col hidden gap-5 text-3xl text-white lg:flex">
       <a href="https://twitter.com/aay7ush" target="_blank" class="social">
         <i class="fa-brands fa-x-twitter"></i>
