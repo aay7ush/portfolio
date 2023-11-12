@@ -1,11 +1,12 @@
 ---
+import Intro from "./Intro.astro"
 import MainContent from "./MainContent.astro"
 import Wrapper from "./Wrapper.astro"
 ---
 
 <Wrapper classes="pb-20 pt-10" id="contact" maxWidth="max-w-5xl">
-  <MainContent
-    classes="md:text-center"
+  <Intro
+    classes="pb-7"
     title="Contact Me"
     subtitle="Contact"
     paragraph="Ready to collaborate or have a question? Don't hesitate to reach out. Feel free to drop me a message and I'll get back to you as soon as possible. Let's connect and bring your web project to life!"
@@ -42,7 +43,7 @@ import Wrapper from "./Wrapper.astro"
 
 <style>
   .input {
-    @apply border-2 border-clr-accent/20 p-2 indent-1 rounded-md placeholder-clr-primary/40;
+    @apply border-2 border-clr-accent/20 p-2 indent-1 rounded-md placeholder-clr-primary/40 outline-clr-accent;
   }
 </style>
 

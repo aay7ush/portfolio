@@ -1,0 +1,26 @@
+---
+interface Props {
+  classes?: string
+  title: string
+  subtitle?: string
+  paragraph: string
+}
+
+const { classes, title, subtitle, paragraph } = Astro.props
+---
+
+<section class={`grid gap-3 text-center ${classes}`}>
+  <p
+    class="text-base leading-8 tracking-[.2em] uppercase text-clr-accent lg:text-lg"
+  >
+    {subtitle}
+  </p>
+  <h2
+    class="font-extrabold text-5xl lg:text-6xl leading-[64px] tracking-[-1px] text-white"
+  >
+    {title}
+  </h2>
+  <p class="leading-[2.2rem]">
+    {paragraph}
+  </p>
+</section>

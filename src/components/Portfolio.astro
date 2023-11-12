@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets"
-import MainContent from "./MainContent.astro"
+import Intro from "./Intro.astro"
 import Wrapper from "./Wrapper.astro"
 
 interface Project {
@@ -41,8 +41,8 @@ const projects: Project[] = [
 ---
 
 <Wrapper classes="py-20" maxWidth="max-w-5xl" id="portfolio">
-  <MainContent
-    classes="md:text-center"
+  <Intro
+    classes="pb-7"
     title="Latest Work"
     subtitle="Portfolio"
     paragraph="Dive into my project showcase – where ideas come to life through code. Explore a curated selection of my recent web development creations below."
@@ -78,6 +78,7 @@ const projects: Project[] = [
               <div class="flex gap-3 pt-2 font-semibold">
                 <a
                   href={project.liveDemo}
+                  target="_blank"
                   class="px-3 py-1.5 rounded-md bg-clr-accent flex gap-3 items-center"
                 >
                   <span>Live Demo</span>
@@ -85,6 +86,7 @@ const projects: Project[] = [
                 </a>
                 <a
                   href={project.github}
+                  target="_blank"
                   class="grid w-10 h-10 text-2xl rounded-full place-content-center bg-clr-accent"
                 >
                   <i class="fa-brands fa-github" />

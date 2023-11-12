@@ -24,7 +24,7 @@ import Wrapper from "./Wrapper.astro"
     </div>
     <button
       id="scrollToTop"
-      class="hidden lg:block absolute right-20 -top-24 bg-clr-accent pt-3.5 text-2xl px-4 pb-2 rounded-md"
+      class="hidden lg:block absolute right-20 -top-24 bg-clr-accent pt-3.5 text-2xl px-4 pb-2 rounded-md transition duration-300 hover:bg-clr-accent/80"
       ><i class="fa-solid fa-chevron-up fa-bounce"></i></button
     >
   </Wrapper>
@@ -32,7 +32,7 @@ import Wrapper from "./Wrapper.astro"
 
 <style>
   .social {
-    @apply w-10 h-10 grid place-content-center rounded-full bg-clr-accent;
+    @apply w-10 h-10 grid place-content-center rounded-full bg-clr-accent transition duration-300 hover:bg-clr-accent/80;
   }
 </style>
 
