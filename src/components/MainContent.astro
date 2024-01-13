@@ -40,8 +40,8 @@ const { classes, title, subtitle, paragraph, button } = Astro.props
   {
     button && (
       <a
-        href={button === "Hire Me" ? "#contact" : "/Resume.pdf"}
-        download={button !== "Hire Me" ? "" : null}
+        href={button === "Hire Me" ? "#contact" : "http://tinyurl.com/3ezrhw7f"}
+        target={button === "Hire Me" ? "" : "_blank"}
         class={`${
           button === "Hire Me"
             ? "bg-clr-accent text-white hover:bg-clr-accent/80 transition-all duration-200 ease-in-out"
@@ -49,11 +49,7 @@ const { classes, title, subtitle, paragraph, button } = Astro.props
         } font-bold uppercase py-2 px-5 rounded-sm flex items-center tracking-wider gap-2 mt-2 w-fit mx-auto md:mx-0`}
       >
         <span>{button}</span>
-        <i
-          class={`fa-solid fa-chevron-${
-            button === "Hire Me" ? "right" : "down"
-          } pb-1`}
-        />
+        <i class={`fa-solid fa-chevron-right pb-1`} />
       </a>
     )
   }
