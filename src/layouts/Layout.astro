@@ -1,4 +1,6 @@
 ---
+import { AstroFont } from 'astro-font'
+
 interface Props {
   title: string
   description?: string
@@ -19,11 +21,18 @@ const { title, description, image } = Astro.props
     <meta property="og:image" content={image} />
     <title>{title}</title>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <AstroFont
+      config={[
+        {
+          src: [],
+          preload: false,
+          display: "swap",
+          name: "Epilogue",
+          selector: ".font-sans",
+          fallback: "sans-serif",
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&display=swap',
+        },
+      ]}
     />
     <!-- Font Awesome -->
     <script
