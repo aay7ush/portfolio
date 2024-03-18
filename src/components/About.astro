@@ -1,137 +1,137 @@
 ---
-import { Image } from "astro:assets"
-import MainContent from "./MainContent.astro"
-import Wrapper from "./Wrapper.astro"
+import { Image } from 'astro:assets'
+import MainContent from './MainContent.astro'
+import Wrapper from './Wrapper.astro'
 
 const SKILLS = [
-  {
-    name: "HTML",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  },
-  {
-    name: "CSS",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  },
-  {
-    name: "Tailwind",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-  },
-  {
-    name: "JavaScript",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  },
-  {
-    name: "TypeScript",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
-  {
-    name: "React",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    name: "Next",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  },
-  {
-    name: "Redux",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-  },
+	{
+		name: 'HTML',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+	},
+	{
+		name: 'CSS',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+	},
+	{
+		name: 'Tailwind',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+	},
+	{
+		name: 'JavaScript',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+	},
+	{
+		name: 'TypeScript',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+	},
+	{
+		name: 'React',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+	},
+	{
+		name: 'Next',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+	},
+	{
+		name: 'Redux',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
+	},
 ]
 
 const TOOLS = [
-  {
-    name: "Git",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  {
-    name: "GitHub",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-  },
-  {
-    name: "Figma",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-  },
-  {
-    name: "Bash",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
-  },
-  {
-    name: "VS Code",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-  },
+	{
+		name: 'Git',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+	},
+	{
+		name: 'GitHub',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+	},
+	{
+		name: 'Figma',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+	},
+	{
+		name: 'Bash',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
+	},
+	{
+		name: 'VS Code',
+		url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+	},
 ]
 ---
 
 <div class="pt-7 bg-clr-light text-clr-primary pb-28 overflow-x-hidden">
-  <Wrapper id="about">
-    <section class="grid items-center gap-7 md:grid-cols-2 lg:gap-16">
-      <div data-aos="fade-right">
-        <Image
-          src="/about.png"
-          alt="about image"
-          width={580}
-          height={570}
-          loading="lazy"
-          class="py-12"
-        />
-      </div>
-      <div data-aos="fade-left">
-        <MainContent
-          title="Front-End Developer"
-          paragraph="Young and ambitious self-taught Developer hailing from India, crafting seamless web experiences with Next.js, TypeScript, and Tailwind CSS. Transforming visions into pixel-perfect realities. Explore my digital journey here!"
-          button="Resume"
-        />
-      </div>
-    </section>
-    <section data-aos="flip-down">
-      <div class="hidden lg:flex gap-7 justify-center pt-10">
-        {
-          SKILLS.map((skill) => (
-            <Image src={skill.url} alt={skill.name} width={100} height={100} />
-          ))
-        }
-      </div>
-      <div class="hidden lg:flex gap-7 justify-center pt-10">
-        {
-          TOOLS.map((skill) => (
-            <Image src={skill.url} alt={skill.name} width={100} height={100} />
-          ))
-        }
-      </div>
-    </section>
+	<Wrapper id="about">
+		<section class="grid items-center gap-7 md:grid-cols-2 lg:gap-16">
+			<div data-aos="fade-right">
+				<Image
+					src="/about.png"
+					alt="about image"
+					width={580}
+					height={570}
+					loading="lazy"
+					class="py-12"
+				/>
+			</div>
+			<div data-aos="fade-left">
+				<MainContent
+					title="Front-End Developer"
+					paragraph="Young and ambitious self-taught Developer hailing from India, crafting seamless web experiences with Next.js, TypeScript, and Tailwind CSS. Transforming visions into pixel-perfect realities. Explore my digital journey here!"
+					button="Resume"
+				/>
+			</div>
+		</section>
+		<section data-aos="flip-down">
+			<div class="hidden lg:flex gap-7 justify-center pt-10">
+				{
+					SKILLS.map((skill) => (
+						<Image src={skill.url} alt={skill.name} width={100} height={100} />
+					))
+				}
+			</div>
+			<div class="hidden lg:flex gap-7 justify-center pt-10">
+				{
+					TOOLS.map((skill) => (
+						<Image src={skill.url} alt={skill.name} width={100} height={100} />
+					))
+				}
+			</div>
+		</section>
 
-    <section
-      data-aos="flip-down"
-      class="flex flex-col gap-10 mx-auto border rounded-md mt-28 border-clr-accent/25 md:flex-row lg:gap-20 w-fit"
-    >
-      <div class="flex items-center gap-5 px-10 pt-10 md:py-0 lg:pl-20">
-        <div class="icon">
-          <i class="fa-solid fa-calendar-check"></i>
-        </div>
-        <div>
-          <h4 class="text-5xl font-extrabold">1.5+</h4>
-          <p>Years of Experience</p>
-        </div>
-      </div>
+		<section
+			data-aos="flip-down"
+			class="flex flex-col gap-10 mx-auto border rounded-md mt-28 border-clr-accent/25 md:flex-row lg:gap-20 w-fit"
+		>
+			<div class="flex items-center gap-5 px-10 pt-10 md:py-0 lg:pl-20">
+				<div class="icon">
+					<i class="fa-solid fa-calendar-check"></i>
+				</div>
+				<div>
+					<h4 class="text-5xl font-extrabold">1.5+</h4>
+					<p>Years of Experience</p>
+				</div>
+			</div>
 
-      <hr class="border-clr-accent/25 md:hidden" />
-      <div class="hidden md:block bg-clr-accent/25 w-[1px] h-40"></div>
+			<hr class="border-clr-accent/25 md:hidden" />
+			<div class="hidden md:block bg-clr-accent/25 w-[1px] h-40"></div>
 
-      <div class="flex items-center gap-5 px-10 pb-10 md:py-0 lg:pr-20">
-        <div class="icon">
-          <i class="fa-regular fa-folder-open"></i>
-        </div>
-        <div>
-          <h4 class="text-5xl font-extrabold">50+</h4>
-          <p>Projects Done</p>
-        </div>
-      </div>
-    </section>
-  </Wrapper>
+			<div class="flex items-center gap-5 px-10 pb-10 md:py-0 lg:pr-20">
+				<div class="icon">
+					<i class="fa-regular fa-folder-open"></i>
+				</div>
+				<div>
+					<h4 class="text-5xl font-extrabold">50+</h4>
+					<p>Projects Done</p>
+				</div>
+			</div>
+		</section>
+	</Wrapper>
 </div>
 
 <style>
-  .icon {
-    @apply grid w-24 h-24 text-5xl text-white rounded-full bg-clr-accent place-content-center;
-  }
+	.icon {
+		@apply grid w-24 h-24 text-5xl text-white rounded-full bg-clr-accent place-content-center;
+	}
 </style>
