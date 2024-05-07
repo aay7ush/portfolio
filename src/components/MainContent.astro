@@ -1,56 +1,60 @@
 ---
 interface Props {
-  classes?: string
-  title: string
-  subtitle?: string
-  paragraph: string
-  button?: string
+	classes?: string
+	title: string
+	subtitle?: string
+	paragraph: string
+	button?: string
 }
 
 const { classes, title, subtitle, paragraph, button } = Astro.props
 ---
 
 <section class={`grid gap-3 text-center md:text-start ${classes}`}>
-  <p
-    class="text-base leading-8 tracking-[.2em] uppercase text-clr-accent lg:text-lg"
-  >
-    {subtitle}
-  </p>
-  <h2
-    class={`${
-      title === "Front-End Developer"
-        ? "text-clr-primary xl:text-7xl"
-        : "text-white"
-    }  font-extrabold text-5xl lg:text-6xl leading-[64px] tracking-[-1px]`}
-  >
-    {
-      title === "Hey, I'm Aayush Jaiswal" ? (
-        <>
-          Hey, I'm <br /> <span class="text-clr-accent">Aayush Jaiswal</span>
-        </>
-      ) : (
-        title
-      )
-    }
-  </h2>
-  <p class="leading-[2.2rem]">
-    {paragraph}
-  </p>
+	<p
+		class="text-base leading-8 tracking-[.2em] uppercase text-clr-accent lg:text-lg"
+	>
+		{subtitle}
+	</p>
+	<h2
+		class={`${
+			title === "Front-End Developer"
+				? "text-clr-primary xl:text-7xl"
+				: "text-white"
+		}  font-extrabold text-5xl lg:text-6xl leading-[64px] tracking-[-1px]`}
+	>
+		{
+			title === "Hey, I'm Aayush Jaiswal" ? (
+				<>
+					Hey, I'm <br /> <span class="text-clr-accent">Aayush Jaiswal</span>
+				</>
+			) : (
+				title
+			)
+		}
+	</h2>
+	<p class="leading-[2.2rem]">
+		{paragraph}
+	</p>
 
-  {
-    button && (
-      <a
-        href={button === "Hire Me" ? "#contact" : "http://tinyurl.com/2wdyubj9"}
-        target={button === "Hire Me" ? "" : "_blank"}
-        class={`${
-          button === "Hire Me"
-            ? "bg-clr-accent text-white hover:bg-clr-accent/80 transition-all duration-200 ease-in-out"
-            : "bg-white drop-shadow-lg"
-        } font-bold uppercase py-2 px-5 rounded-sm flex items-center tracking-wider gap-2 mt-2 w-fit mx-auto md:mx-0`}
-      >
-        <span>{button}</span>
-        <i class={`fa-solid fa-chevron-right pb-1`} />
-      </a>
-    )
-  }
+	{
+		button && (
+			<a
+				href={
+					button === "Hire Me"
+						? "#contact"
+						: "https://drive.google.com/file/d/1DYz3FMY9ymTGTJztJFqDw00Vl5GvEO_r/view?usp=sharing"
+				}
+				target={button === "Hire Me" ? "" : "_blank"}
+				class={`${
+					button === "Hire Me"
+						? "bg-clr-accent text-white hover:bg-clr-accent/80 transition-all duration-200 ease-in-out"
+						: "bg-white drop-shadow-lg"
+				} font-bold uppercase py-2 px-5 rounded-sm flex items-center tracking-wider gap-2 mt-2 w-fit mx-auto md:mx-0`}
+			>
+				<span>{button}</span>
+				<i class={`fa-solid fa-chevron-right pb-1`} />
+			</a>
+		)
+	}
 </section>
